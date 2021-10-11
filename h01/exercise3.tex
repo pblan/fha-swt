@@ -1,0 +1,83 @@
+
+\documentclass{abgabe}
+
+\begin{document}
+
+\begin{questions}
+    \qformat{\thequestion. \textbf{\thequestiontitle} \hfill}
+    \titledquestion{Git}
+    Im Praktikum wurde das Versionsverwaltungstool \emph{Git} vorgestellt. Beantworten Sie die folgenden Aufgaben:
+    \begin{parts}
+        \part 
+        Was sind die Vorteile bei der Verwendung von Git im Gegensatz zum Arbeiten ohne Versionsverwaltungstools?
+        \begin{solution}
+            Reddit-User \href{https://www.reddit.com/r/explainlikeimfive/comments/1701qi/comment/c819jus/?utm_source=share&utm_medium=web2x&context=3}{ikilledkojack} fasst es sehr gut zusammen:
+            \begin{displayquote}
+                Remember the phrase \gqq{Too many cooks spoil the broth}?
+                
+                Imagine you've got a bunch of chefs writing a huge cookbook - thousands of pages at least. 
+                Chefs being as they are, there will be some delegation as to who writes what parts, but eventually a few things will happen:
+                \begin{itemize}
+                    \item A chef may want to change the recipe another chef wrote
+                    \item A chef may want to find an instruction they wrote earlier, but have now changed to say something else
+                    \item All of the chefs eventually will want to combine their notes into the final pages for the book, and not lose track of whose pages are on what page
+                \end{itemize}
+                And this is what version control does - if this analogy doesn't make sense to you, think of it more as a \texttt{Ctrl + Z} on drugs that lets you point the finger.
+            \end{displayquote}
+        \end{solution}
+        
+        \part 
+        Wie unterscheidet sich Git von einem zentralisierten VCS wie zum Beispiel Subversion und erläutern Sie die Vorteile, die sich aus diesen Unterschieden ergeben?
+        \begin{solution}
+            Aus \href{https://www.geeksforgeeks.org/centralized-vs-distributed-version-control-which-one-should-we-choose/}{geeksforgeeks.org} (übersetzt):
+            \begin{displayquote}
+                Anstelle eines einzigen Repositorys, das der Server ist, hat hier jeder einzelne Entwickler oder Kunde seinen eigenen Server und verfügt über eine Kopie der gesamten Historie oder Version des Codes und aller seiner Zweige auf seinem lokalen Server oder Rechner.
+                
+                Im Grunde genommen kann jeder Client oder Benutzer lokal und getrennt arbeiten, was bequemer ist als eine zentralisierte Quellcodekontrolle, weshalb sie auch als verteilt bezeichnet wird. 
+            \end{displayquote}
+        \end{solution}
+        
+        \newpage
+        \part 
+        Nehmen Sie an, Sie arbeiten an einem Softwareprojekt mit vorhandenen Commits. Sie schreiben Code für eine bereits existierende Klasse und stellen im Nachhinein fest, dass Ihre Änderungen das Problem nicht lösen.
+        Wie lassen sich mit Git Ihre getätigten Änderungen rückgängig machen? Unterscheiden Sie dabei zwischen:
+        \begin{subparts}
+            \subpart 
+            noch nicht geadded
+            \begin{solution}
+                Die Änderungen in einer Datei können z.B. einfach mit einer festen, aber beliebigen Anzahl von \texttt{Ctrl + Z} rückgängig gemacht werden.
+                
+                Will man aber den Stand einer Datei aus einem bestimmten Branch haben, wählt man: 
+                \begin{lstlisting}[language=bash, basicstyle=\ttfamily]
+                git checkout <branch> <file>
+                \end{lstlisting}
+            \end{solution}
+            
+            \subpart 
+            schon geadded
+            \begin{solution}
+                Um \texttt{git add <file>} rückgängig zu machen, wählt man: 
+                \begin{lstlisting}[language=bash, basicstyle=\ttfamily]
+                git reset <file>
+                \end{lstlisting}
+                
+                Will man aber den Stand einer Datei aus einem bestimmten Branch haben, wählt man: 
+                \begin{lstlisting}[language=bash, basicstyle=\ttfamily]
+                git checkout <branch> <file>
+                \end{lstlisting}
+            \end{solution}
+            
+            \subpart 
+            schon commitet
+            \begin{solution}
+                Ist der Fehler im letzten Commit passiert \emph{und} man will den gesamten letzten Commit rückgängig machen, wählt man: 
+                \begin{lstlisting}[language=bash, basicstyle=\ttfamily]
+                git reset [--soft | --hard] HEAD~1
+                \end{lstlisting}
+                
+                \texttt{--soft} lässt die Änderungen an den Daten in der lokalen Kopie erhalten, wohingegen \texttt{--hard} auch diese Änderungen löscht und damit potentiell Arbeit verloren geht.
+            \end{solution}
+        \end{subparts}
+    \end{parts}
+\end{questions}
+\end{document}
