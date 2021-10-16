@@ -1,0 +1,61 @@
+
+\documentclass{abgabe}
+\begin{document}
+
+\begin{questions}
+    \qformat{\thequestion. \textbf{\thequestiontitle} \hfill}
+    \titledquestion{Veränderte Anforderungen}
+    Einem Kunden fällt nach Zweidritteln erfolgreicher Projektlaufzeit ein, dass er eine bereits entwickelte Funktionalität nicht benötigt, dafür aber eine andere wünscht. 
+    Beschreiben Sie kurz, wie man bei Nutzung der folgenden Vorgehensmodelle darauf reagieren würde:
+    \begin{parts}
+        \part 
+        Wasserfallmodell
+        \begin{solution}
+            \begin{center}
+                \includegraphics[width=0.5\textwidth]{crying.png}
+            \end{center}
+            
+            Und Erklärung:
+            
+            Wenn man erst einmal davon absieht, dass das Wasserfall-Modell nach Royce bewiesenermaßen \href{http://valueatwork.se/waterfall-model-probably-the-most-costly-mistake-in-the-world/?lang=en}{ohnehin nicht funktioniert}, sieht das Wasserfallmodell keine Möglichkeit der Reevaluation vor. 
+            Ergo wird bei striktem Ablauf nach dem Wasserfallmodell die Anforderung einfach ignoriert.
+        \end{solution}
+        
+        \part 
+        Iterative Entwicklung
+        \begin{solution}
+            Man kann hoffen, dass die zu verändernde Funktionalität nicht zu viele Änderungen am bisher entwickelten System hervorruft. 
+            Ist dies der Fall, kann man in der nächsten Iteration die benötigten Änderungen vornehmen.
+            
+            Sind allerdings zu viele Änderungen nötig, muss potentiell die gesamte Codebase verändert oder neugebaut werden. 
+            Das kann entweder einen (quasi) Neustart, oder das gleiche Ergebnis wie in (a) hervorrufen.
+        \end{solution}
+        
+        \part 
+        Inkrementelle Entwicklung
+        \begin{solution}
+            Man kann hoffen, dass das zu verändernde Inkrement nicht zu viele Änderungen am bisher entwickelten System hervorruft. 
+            Ist dies der Fall, kann man in dem nächsten Inkrement die benötigten Änderungen vornehmen.
+            
+            Sind allerdings zu viele Änderungen nötig, muss potentiell die gesamte Codebase verändert oder neugebaut werden. 
+            Das kann entweder einen (quasi) Neustart, oder das gleiche Ergebnis wie in (a) hervorrufen.
+        \end{solution}
+        
+        \newpage
+        \part 
+        Wo würden Sie das SCRUM Modell einordnen?
+        \begin{solution}
+            Aus \href{https://de.wikipedia.org/wiki/Scrum}{Wikipedia}: 
+            \begin{displayquote}
+                Der Ansatz von Scrum ist empirisch, inkrementell und iterativ. 
+                Er beruht auf der Erfahrung, dass viele Entwicklungsprojekte zu komplex sind, um in einen vollumfänglichen Plan gefasst werden zu können. 
+                Ein wesentlicher Teil der Anforderungen und der Lösungsansätze ist zu Beginn unklar. Diese Unklarheit lässt sich beseitigen, indem Zwischenergebnisse geschaffen werden. 
+                Anhand dieser Zwischenergebnisse lassen sich die fehlenden Anforderungen und Lösungstechniken effizienter finden als durch eine abstrakte Klärungsphase. 
+                In Scrum wird neben dem Produkt auch die Planung iterativ und inkrementell entwickelt. Der langfristige Plan (das Product Backlog) wird kontinuierlich verfeinert und verbessert. 
+                Der Detailplan (das Sprint Backlog) wird nur für den jeweils nächsten Zyklus (den Sprint) erstellt. 
+                Damit wird die Projektplanung auf das Wesentliche fokussiert.
+            \end{displayquote}
+        \end{solution}
+    \end{parts}
+\end{questions}
+\end{document}

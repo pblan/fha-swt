@@ -1,0 +1,111 @@
+
+\documentclass{abgabe}
+
+\begin{document}
+
+\begin{questions}
+    \qformat{\thequestion. \textbf{\thequestiontitle} \hfill}
+    \titledquestion{SCRUM}
+    Suchen Sie im Netz nach dem offiziellen Scrum-Guide von Ken Schwaber und Jeff Sutherland.
+    Lesen Sie die aktuelle Version (englische Variante) und beantworten Sie anschließend die folgenden Fragen. 
+    (Hier zu finden: \href{https://scrumguides.org/}{Scrum Guides})
+    \begin{parts}
+        \part 
+        Welche Personen/Rollen sieht das Scrum-Modell vor?
+        \begin{solution}
+            \begin{itemize}
+                \item $n$ Developers
+                \item 1 Product Owner
+                \item 1 Scrum Master
+            \end{itemize}
+        \end{solution}
+        
+        \part 
+        Welcher Zeitraum ist laut Dokumentation vorgesehen für die Planung eines Sprints?
+        \begin{solution}
+            Aus dem \href{https://scrumguides.org/scrum-guide.html#sprint-planning}{Scrum Guide}:
+            \begin{displayquote}
+                Sprint Planning is timeboxed to a maximum of eight hours for a one-month Sprint. 
+                For shorter Sprints, the event is usually shorter.
+            \end{displayquote}
+        \end{solution}
+        
+        \part 
+        Welcher Zeitraum ist laut Dokumentation vorgesehen für die folgenden Abläufe / Meetings:
+        \begin{subparts}
+            \subpart 
+            Daily Scrum
+            \begin{solution}
+                Aus dem \href{https://scrumguides.org/scrum-guide.html#sprint-planning}{Scrum Guide}:
+                \begin{displayquote}
+                    The Daily Scrum is a 15-minute event for the Developers of the Scrum Team. 
+                    To reduce complexity, it is held at the same time and place every working day of the Sprint. 
+                    If the Product Owner or Scrum Master are actively working on items in the Sprint Backlog, they participate as Developers.
+                \end{displayquote}
+            \end{solution}
+            
+            \subpart 
+            Sprint
+            \begin{solution}
+                Aus dem \href{https://scrumguides.org/scrum-guide.html#sprint-planning}{Scrum Guide}:
+                \begin{displayquote}
+                    They are fixed length events of one month or less to create consistency. 
+                    A new Sprint starts immediately after the conclusion of the previous Sprint.
+                \end{displayquote}
+            \end{solution}
+            
+            \newpage 
+            \subpart 
+            Sprint Retrospektive
+            \begin{solution}
+                Aus dem \href{https://scrumguides.org/scrum-guide.html#sprint-planning}{Scrum Guide}:
+                \begin{displayquote}
+                    The Sprint Retrospective concludes the Sprint. 
+                    It is timeboxed to a maximum of three hours for a one-month Sprint. 
+                    For shorter Sprints, the event is usually shorter.
+                \end{displayquote}
+            \end{solution}
+            
+            \subpart 
+            Sprint Review
+            \begin{solution}
+                Aus dem \href{https://scrumguides.org/scrum-guide.html#sprint-planning}{Scrum Guide}:
+                \begin{displayquote}
+                    The Sprint Review is the second to last event of the Sprint and is timeboxed to a maximum of four hours for a one-month Sprint. 
+                    For shorter Sprints, the event is usually shorter.
+                \end{displayquote}
+            \end{solution}
+        \end{subparts}
+        
+        \part 
+        Welche Nachteile und welche möglichen Probleme bringt das Vorgehen nach Scrum mit sich?
+        \begin{solution}
+            Reddit-User \href{https://www.reddit.com/r/scrum/comments/nu6upg/comment/h10p4si/?utm_source=reddit&utm_medium=web2x&context=3}{MoritzK\_PSM} fasst es sehr gut zusammen: 
+            \begin{displayquote}
+                Scrum makes certain implicit assumption about the people involved, that are not always given. A few examples:
+                \begin{itemize}
+                    \item A Scrum Team must be cross-functional and not have any sub-teams.
+                          That means people must usually go towards broadening the spectrum of their knowledge and ability. 
+                          We speak of things like T-shaped and E-shaped skill profiles. 
+                          Not everybody is \emph{willing to do that} and in many places you still see, e.g., there being exclusively one person in a team for e.g. testing.
+                          This can create problems with delivery reliability, which may be better handled with a Kanban approach.
+                    \item The whole idea of self-management is predicated on the idea that people \emph{WANT to manage their own stuff}.
+                          Often enough you will find people that really don't want to take that responsibility and prefer to just follow instructions they are given by a manager.
+                          \subitem An especially visible place is the Retrospective. 
+                          If people do not care to improve their processes, it won't happen. 
+                          A Scrum Master can only do so much in terms of encouraging and motivating. 
+                          But people \emph{who really don't care, won't care}.
+                          \newpage 
+                    \item Scrum, in it's introduction, creates an initial disruption.
+                          It is meant to be one, to - as Scrum.org puts it - show the inefficacies of the existing processes. 
+                          Now a lot of people don't like that, especially in the management. 
+                          Here you can often see ScrumButs, e.g. \gqq{we introduce Scrum, but we don't have time for a Retro every Sprint} or \gqq{we do Scrum now, but all the QA is still handled by an external body}, etc.
+                          Often a ScrumBut is still better than no Scrum at all, but also there are many cases where one aspect of Scrum missing drags other aspects down and the overall \gqq{faith} in the efficacy of Scrum is lost. 
+                          Here a gradual approach might be better, gaining gradually more buy-in from the management.
+                \end{itemize}
+                Ultimately, Scrum does not solve your problems. Scrum is based on collective intelligence and pro-active engagement in the development. If you have shitty people, you won't get far with Scrum.
+            \end{displayquote}
+        \end{solution}
+    \end{parts}
+\end{questions}
+\end{document}
