@@ -36,6 +36,31 @@
         \begin{center}
             \includegraphics[width=\textwidth]{swt_h07_veranstaltungsverwaltung.pdf}
         \end{center}
+
+        Reddit=User \href{https://www.reddit.com/r/javahelp/comments/gpnqij/comment/frnuudx/?utm_source=share&utm_medium=web2x&context=3}{raja\_42} fasst den Unterschied zwischen Aggregation und Komposition gut zusammen:
+        \begin{displayquote}
+            Association is a relationship between two entities. Kind of, associated with, in English.
+
+E.g. An Employee class will have a property which is a list of Projects.
+
+Composition is when a container entity has child entities which cannot survive on their own.
+
+E.g. A Shopping Cart class is composed of a list of Cart Items. When a Shopping Cart is deleted, the Cart Items cannot exist conceptually. So they are transient in nature.
+
+Any physical representation of them in database etc. will follow this principle. E.g. There will never be a Cart Item record in the DB without a Shopping Cart record id.
+
+Finally, an aggregation is like composition except the contained entities can exist on their own.
+
+E.g. When you are selecting a group of people in a classroom for a science project, you model few entities or classes.
+
+A Student class for every student in the class. A Professor entity. Etc.
+
+A ProjectGroup class is an aggregation which then has a list of students, a professor etc.
+
+Both are independent concepts. Dissolving a project group doesn't make the corresponding students and professors vanish from the system. They still exist.
+
+In physical form, they represent DB records that don't get deleted when the container record is deleted. This just means that they are independent entities that can live on their own.
+        \end{displayquote}
     \end{solution}
 \end{questions}
 \end{document}
