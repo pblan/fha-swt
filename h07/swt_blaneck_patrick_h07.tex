@@ -1,6 +1,26 @@
 \documentclass{abgabe}
 \usepackage{standalone}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{newtxtt}
 
+\definecolor{darkviolet}{rgb}{0.5,0,0.4}
+\definecolor{darkgreen}{rgb}{0,0.4,0.2} 
+\definecolor{darkblue}{rgb}{0.1,0.1,0.9}
+\definecolor{darkgrey}{rgb}{0.5,0.5,0.5}
+\definecolor{lightblue}{rgb}{0.4,0.4,1}
+
+\lstset{
+	language=Java,
+	basicstyle=\small\ttfamily,
+	keywordstyle=\color{darkviolet}\bfseries,
+	commentstyle=\color{darkgreen},
+	stringstyle=\color{darkblue},
+	morecomment=[s][\color{lightblue}]{/**}{*/},
+	showstringspaces=false,
+    frame = single,
+	%numbers=left
+}
 \setauthor{Patrick Gustav Blaneck} % Autor hier
 \setmodule{Softwaretechnik} % Modulname hier
 %\setmodule{Buzzword-Bingo} % Modulname hier
@@ -20,5 +40,20 @@
     \input{exercise3}
     \endgroup
 \end{questions}
+
+\clearpage
+\appendix
+\lstinputlisting[language=Java, caption=\texttt{Bibliothek.java}, captionpos=b]{klassengeruest/aufgabe/Bibliothek.java}
+\clearpage
+\lstinputlisting[language=Java, caption=\texttt{Buch.java}, captionpos=b]{klassengeruest/aufgabe/Buch.java}
+\clearpage
+\lstinputlisting[language=Java, caption=\texttt{Person.java}, captionpos=b]{klassengeruest/aufgabe/Person.java}
+\clearpage
+\lstinputlisting[language=Java, caption=\texttt{Personalausweis.java}, captionpos=b]{klassengeruest/aufgabe/Personalausweis.java}
+\clearpage
+\lstinputlisting[language=Java, caption=\texttt{Studiengang.java}, captionpos=b]{klassengeruest/aufgabe/Studiengang.java}
+\clearpage
+\lstinputlisting[language=Java, caption=\texttt{Studierender.java}, captionpos=b]{klassengeruest/aufgabe/Studierender.java}
+\clearpage
 
 \end{document}
