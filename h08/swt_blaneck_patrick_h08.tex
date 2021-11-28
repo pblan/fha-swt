@@ -1,0 +1,58 @@
+\documentclass{abgabe}
+\usepackage{standalone}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{newtxtt}
+
+\definecolor{darkviolet}{rgb}{0.5,0,0.4}
+\definecolor{darkgreen}{rgb}{0,0.4,0.2}
+\definecolor{darkblue}{rgb}{0.1,0.1,0.9}
+\definecolor{darkgrey}{rgb}{0.5,0.5,0.5}
+\definecolor{lightblue}{rgb}{0.4,0.4,1}
+
+\lstset{
+    language=Java,
+    basicstyle=\small\ttfamily,
+    keywordstyle=\color{darkviolet}\bfseries,
+    commentstyle=\color{darkgreen},
+    stringstyle=\color{darkblue},
+    morecomment=[s][\color{lightblue}]{/**}{*/},
+    showstringspaces=false,
+    frame = single,
+    %numbers=left
+    }
+    
+\setauthor{Patrick Gustav Blaneck} % Autor hier
+\setmodule{Softwaretechnik} % Modulname hier
+%\setmodule{Buzzword-Bingo} % Modulname hier
+\setsheetnum{8} % Blattnummer hier
+%\setsheettype{Übungsblatt} % Blatttyp hier
+
+\begin{document}
+\maketitle
+\begin{questions}
+    \begingroup
+    \renewenvironment{questions}{}{}
+    %\setcounter{question}{5}
+    \input{exercise1}
+    \endgroup
+\end{questions}
+
+\clearpage
+\appendix
+\lstinputlisting[language=Java, caption=\texttt{Abonnement.java}, captionpos=b]{code/Abonnement.java}
+\clearpage
+\lstinputlisting[language=Java, caption=\texttt{IAbrechnungsart.java}, captionpos=b]{code/IAbrechnungsart.java}
+\lstinputlisting[language=Java, caption=\texttt{PostPaid.java}, captionpos=b]{code/PostPaid.java}
+\clearpage
+\lstinputlisting[language=Java, caption=\texttt{Kunde.java}, captionpos=b]{code/Kunde.java}
+\clearpage
+\lstinputlisting[language=Java, caption=\texttt{Main.java}, captionpos=b]{code/Main.java}
+\clearpage
+\lstinputlisting[language=Java, caption=\texttt{Nachrichtenkanal.java}, captionpos=b]{code/Nachrichtenkanal.java}
+\clearpage
+\lstinputlisting[language=Java, caption=\texttt{NachrichtenkanalObserver.java}, captionpos=b]{code/NachrichtenkanalObserver.java}
+\clearpage
+
+\end{document}
