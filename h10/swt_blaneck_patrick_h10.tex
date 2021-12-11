@@ -1,0 +1,67 @@
+\documentclass{abgabe}
+\usepackage{standalone}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{newtxtt}
+
+\definecolor{darkviolet}{rgb}{0.5,0,0.4}
+\definecolor{darkgreen}{rgb}{0,0.4,0.2}
+\definecolor{darkblue}{rgb}{0.1,0.1,0.9}
+\definecolor{darkgrey}{rgb}{0.5,0.5,0.5}
+\definecolor{lightblue}{rgb}{0.4,0.4,1}
+
+\lstset{
+    language=Java,
+    basicstyle=\small\ttfamily,
+    keywordstyle=\color{darkviolet}\bfseries,
+    commentstyle=\color{darkgreen},
+    stringstyle=\color{darkblue},
+    morecomment=[s][\color{lightblue}]{/**}{*/},
+    showstringspaces=false,
+    frame = single,
+    %numbers=left
+    }
+    
+\setauthor{Patrick Gustav Blaneck} % Autor hier
+\setmodule{Softwaretechnik} % Modulname hier
+%\setmodule{Buzzword-Bingo} % Modulname hier
+\setsheetnum{10} % Blattnummer hier
+%\setsheettype{Übungsblatt} % Blatttyp hier
+
+\begin{document}
+\maketitle
+\begin{questions}
+    \begingroup
+    \renewenvironment{questions}{}{}
+    %\setcounter{question}{5}
+    \input{exercise1}
+    \endgroup
+\end{questions}
+
+\clearpage
+\appendix
+\lstinputlisting[language=Java, caption=\texttt{Steuerung.java}, captionpos=b]{code/Steuerung.java}
+\clearpage
+\lstinputlisting[language=Java, caption=\texttt{Context\_Politiker.java}, captionpos=b]{code/Context_Politiker.java}
+\clearpage
+\lstinputlisting[language=Java, caption=\texttt{State.java}, captionpos=b]{code/State.java}
+\clearpage
+\lstinputlisting[language=Java, caption=\texttt{Aufsichtsrat.java}, captionpos=b]{code/Aufsichtsrat.java}
+\clearpage
+\lstinputlisting[language=Java, caption=\texttt{Ergeben.java}, captionpos=b]{code/Ergeben.java}
+\clearpage
+\lstinputlisting[language=Java, caption=\texttt{Hoerig.java}, captionpos=b]{code/Hoerig.java}
+\clearpage
+\lstinputlisting[language=Java, caption=\texttt{Kriechend.java}, captionpos=b]{code/Kriechend.java}
+\clearpage
+\lstinputlisting[language=Java, caption=\texttt{Loyal.java}, captionpos=b]{code/Loyal.java}
+\clearpage
+\lstinputlisting[language=Java, caption=\texttt{Neutral.java}, captionpos=b]{code/Neutral.java}
+\clearpage
+\lstinputlisting[language=Java, caption=\texttt{Rebellisch.java}, captionpos=b]{code/Rebellisch.java}
+\clearpage
+\lstinputlisting[language=Java, caption=\texttt{Rehabilitiert.java}, captionpos=b]{code/Rehabilitiert.java}
+\clearpage
+\lstinputlisting[language=Java, caption=\texttt{Ruhestand.java}, captionpos=b]{code/Ruhestand.java}
+\end{document}
