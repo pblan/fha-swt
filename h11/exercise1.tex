@@ -1,0 +1,142 @@
+
+\documentclass{abgabe}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{newtxtt}
+
+\definecolor{darkviolet}{rgb}{0.5,0,0.4}
+\definecolor{darkgreen}{rgb}{0,0.4,0.2}
+\definecolor{darkblue}{rgb}{0.1,0.1,0.9}
+\definecolor{darkgrey}{rgb}{0.5,0.5,0.5}
+\definecolor{lightblue}{rgb}{0.4,0.4,1}
+
+\lstset{
+    language=Java,
+    basicstyle=\small\ttfamily,
+    keywordstyle=\color{darkviolet}\bfseries,
+    commentstyle=\color{darkgreen},
+    stringstyle=\color{darkblue},
+    morecomment=[s][\color{lightblue}]{/**}{*/},
+    showstringspaces=false,
+    frame = single,
+    %numbers=left
+}
+
+\begin{document}
+\begin{questions}
+    \question
+    \begin{parts}
+        \part
+        Bestimmen Sie die Äquivalenzklassen zur Berechnung folgender Rabatt-Funktion.
+        Beachten Sie dabei auch Grenzwerte, und Sonderfälle.
+        Geben Sie tabellarisch die Eingaben der drei Parameter, das Ergebnis und eine kurze Beschreibung der Äquivalenzklasse an.
+        Gliedern Sie Ihre Äquivalenzklassen wie folgt:
+        \begin{itemize}
+            \item Regulären Situationen
+            \item Fehlerfälle
+            \item Grenzfälle
+            \item Sonderfälle
+        \end{itemize}
+        Extremwerte können Sie hier außer Acht lassen.
+
+        Grenzfälle können sich auf reguläre Situationen und Fehlerfälle beziehen.
+        Hier darf es Überschneidungen (oder Dopplungen) geben.
+        Bitte geben Sie diese auch unbedingt in den verschiedenen Gruppen an.
+
+        \begin{lstlisting}
+/**
+* Berechnet den Rabatt auf den Eintrittspreis eines Diskobesuchs
+* Frauen erhalten 5% Rabatt. Sind diese zusaetzlich unter 30, werden 
+* zusaetzliche 2% Rabatt gewaehrt.
+* Beamte erhalten nochmals 5% Rabatt (unabh. vom Geschlecht).
+*
+* @param geschlecht   Wert eines enums mit den Auspraegungen "maennlich" 
+*   und "weiblich"
+* @param alter        Das Alter (17 < alter < 80) des Diskobesuchers, 
+*   ansonsten wird eine Exception geworfen
+* @param istBeamter   Flag, um anzuzeigen, dass der Diskobesucher ein 
+*   Beamter ist
+* @return             Rabattfaktor (1.0 entsprechen 100% = freier Eintritt, 
+*   0.5 entsprechen 50% = halber Eintrittspreis)
+* @throws             Exception in allen weiteren nicht hier spezifizierten 
+*   Faellen
+*/
+public double berechneRabatt(GESCHLECHT geschlecht, 
+                                            int alter, boolean istBeamter){
+        \end{lstlisting}
+
+        \newpage
+        \begin{solution}
+            \emph{Betrachtung der Äquivalenzklassen:}
+
+            \begin{tabular}{|l|l|l|l|l|l|}
+                \hline
+                Nr. & Äquivalenzklasse                   & Typ                              & \multicolumn{3}{c|} {Repräsentant}                                        \\ \cline{4-6}
+                    &                                    &                                  & \texttt{geschlecht}                & \texttt{alter} & \texttt{istBeamter} \\
+                \hline
+                0   & Rabatt 0\%                         & (Zulässig, 0.0)                  & \texttt{maennlich}                 & \texttt{42}    & \texttt{false}      \\
+                1   & Rabatt 5\%                         & (Zulässig, 0.05)                 & \texttt{maennlich}                 & \texttt{42}    & \texttt{true}       \\
+                2   & Rabatt 5\%                         & (Zulässig, 0.05)                 & \texttt{weiblich}                  & \texttt{42}    & \texttt{false}      \\
+                3   & Rabatt 7\%                         & (Zulässig, 0.07)                 & \texttt{weiblich}                  & \texttt{24}    & \texttt{false}      \\
+                4   & Rabatt 10\%                        & (Zulässig, 0.1)                  & \texttt{weiblich}                  & \texttt{42}    & \texttt{true}       \\
+                5   & Rabatt 12\%                        & (Zulässig, 0.12)                 & \texttt{weiblich}                  & \texttt{24}    & \texttt{true}       \\
+                6   & \texttt{alter < 18}                & (Unzulässig, \texttt{Exception}) & egal                               & \texttt{-42}   & egal                \\
+                7   & \texttt{alter > 79}                & (Unzulässig, \texttt{Exception}) & egal                               & \texttt{1337}  & egal                \\
+                8   & \texttt{geschlecht} \ $\lightning$ & (Unzulässig, \texttt{Exception}) & \texttt{elmo}                      & egal           & egal                \\
+                \hline
+            \end{tabular}
+
+            \emph{Grenzwertbetrachtung:}
+
+            \begin{tabular}{|l|l|l|l|l|}
+                \hline
+                Nr.                & Typ        & \multicolumn{3}{c|} {Repräsentant}                                        \\ \cline{3-5}
+                                   &            & \texttt{geschlecht}                & \texttt{alter} & \texttt{istBeamter} \\
+                \hline
+                6, (8)             & Unzulässig & egal                               & \texttt{17}    & egal                \\
+                0, 1, 2, 3, 5, (8) & Zulässig   & egal                               & \texttt{18}    & egal                \\
+                0, 2, 4, 5, (8)    & Zulässig   & egal                               & \texttt{79}    & egal                \\
+                7, (8)             & Unzulässig & egal                               & \texttt{80}    & egal                \\
+                \hline
+            \end{tabular}
+
+            \emph{Sonderfallbetrachtung:}
+
+            Ergibt hier erstaunlich wenig Sinn, da es für die Parameter \texttt{geschlecht} und \texttt{istBeamter} ausschließlich Sonderfälle gibt, da beide lediglich zweielementig sind und die möglichen Werte von \texttt{alter} bereits in der Grenzwertbetrachtung zur Genüge abgedeckt und insbesondere genügend gleichverteilt sind.
+
+
+        \end{solution}
+
+        \newpage
+        \part
+        Erklären Sie allgemein was Extremwerte sind und geben Sie ein Beispiel dazu.
+
+        \begin{solution}
+            \href{https://www.matse.itc.rwth-aachen.de/dienste/public/show_document.php?id=7536807}{Markus Lausberg und Robin Ziehe} fassten es unter Aufsicht von Prof. Kraft gut zusammen:
+            \begin{displayquote}
+                Extremwerte sind Werte an den Rändern von Definitionsbereichen.
+                Sie werden oft gesondertbehandelt und sollten deshalb auf jeden Fall getestet werden, da Programmabstürze oft mit diesen Werten zusammenhängen und dies dringend vermieden werden muss.
+            \end{displayquote}
+
+            Man betrachte die folgende sehr komplexe Funktion:
+            \begin{lstlisting}
+/* 
+* Berechnet den Nachfolger der gegeben Zahl
+
+* @param num    Zahl die erhoeht werden soll
+* @return       Nachfolger der Zahl
+*/
+public byte succ(byte num) {
+    // ... 
+}
+            \end{lstlisting}
+
+            Offensichtlich erhält man bei dem Aufruf \texttt{succ(127)} einen Schrecken, wenn man entsetzt feststellen muss, dass auf einmal \texttt{0} der Nachfolger zu \texttt{127} ist.
+
+            Natürlich sind wir aber klüger und haben \texttt{127} als Extremwert identifiziert und entsprechend behandelt und können damit beruhigt schlafen gehen, ohne dass uns das Quality Assurance-Team feuern lässt.
+        \end{solution}
+    \end{parts}
+\end{questions}
+
+\end{document}

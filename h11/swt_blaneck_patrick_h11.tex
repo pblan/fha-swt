@@ -1,0 +1,41 @@
+\documentclass{abgabe}
+\usepackage{standalone}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{newtxtt}
+
+\definecolor{darkviolet}{rgb}{0.5,0,0.4}
+\definecolor{darkgreen}{rgb}{0,0.4,0.2}
+\definecolor{darkblue}{rgb}{0.1,0.1,0.9}
+\definecolor{darkgrey}{rgb}{0.5,0.5,0.5}
+\definecolor{lightblue}{rgb}{0.4,0.4,1}
+
+\lstset{
+    language=Java,
+    basicstyle=\small\ttfamily,
+    keywordstyle=\color{darkviolet}\bfseries,
+    commentstyle=\color{darkgreen},
+    stringstyle=\color{darkblue},
+    morecomment=[s][\color{lightblue}]{/**}{*/},
+    showstringspaces=false,
+    frame = single,
+    %numbers=left
+}
+
+\setauthor{Patrick Gustav Blaneck} % Autor hier
+\setmodule{Softwaretechnik} % Modulname hier
+%\setmodule{Buzzword-Bingo} % Modulname hier
+\setsheetnum{11} % Blattnummer hier
+%\setsheettype{Übungsblatt} % Blatttyp hier
+
+\begin{document}
+\maketitle
+\begin{questions}
+    \begingroup
+    \renewenvironment{questions}{}{}
+    %\setcounter{question}{5}
+    \input{exercise1}
+    \endgroup
+\end{questions}
+\end{document}
